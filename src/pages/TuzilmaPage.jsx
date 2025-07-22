@@ -13,13 +13,12 @@ import {
 function DetailPage() {
   const API_BASE = import.meta.env.VITE_API_URL;
   const { language } = useLanguage();
-  const { type, SectionName, id } = useParams();
+  const { SectionName, id } = useParams();
   const [staffList, setStaffList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   useEffect(() => {
-    const fetchStaff = async () => {
+    const fetchStaff = async () => { 
       setLoading(true);
       try {
         const url = `${API_BASE}/study/${id}/`;

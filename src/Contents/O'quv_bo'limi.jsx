@@ -91,7 +91,6 @@ function Oquv_bolimi() {
         {selectedFacultet && (
           <div className="imgbox">
             <img src={selectedFacultet.image} alt={selectedFacultet.name_uz} />
-            {/* Bu joyni rasm slideshow yoki yana boshqa rasm manba bilan o'tayapsiz */}
           </div>
         )}
 
