@@ -11,12 +11,12 @@ const Universitet = () => {
     const fetchUniversityData = async () => {
       try {
         // Universitet statistikasi
-        const statsRes = await axios.get(`${API_BASE_URL}sections/78/`, {
+        const statsRes = await axios.get(`${API_BASE_URL}/sections/78/`, {
         });
         setStats(statsRes.data.university);
 
         // Mashhur bitiruvchilar
-        const gradsRes = await axios.get(`${API_BASE_URL}university/celebrities/`);
+        const gradsRes = await axios.get(`${API_BASE_URL}/university/celebrities/`);
         setGraduates(gradsRes.data);
       } catch (err) {
         console.error('Xatolik:', err);

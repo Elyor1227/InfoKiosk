@@ -37,9 +37,15 @@ function Aloqa() {
                 <div className="logo">
                   <img className="btn-img" src="/images/tell.svg" alt="logo-tell" />
                 </div>
-                <div className="btn-text">
-                  <p className="name">{item.name}</p>
-                  <p className="phone">{item.phone_number}</p>
+                <div className="btn-text" style={{display:'flex', justifyContent:'space-around', alignItems: 'center', width: '100%'}}>
+                  <div className="name-number">
+                    <p className="name">{item.name}</p>
+                    <p className="phone">{item.phone_number}</p>
+                  </div>
+                  <div className="qr_code">
+                    <p style={{marginBottom: '10px'}}>Telegram:</p>
+                    <img src={item.qr_code} alt="qr_code" style={{width: '120px', height: '120px'}}/>
+                  </div>
                 </div>
               </div>
             ))}

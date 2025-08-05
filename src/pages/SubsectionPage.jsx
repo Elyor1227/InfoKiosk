@@ -45,13 +45,14 @@ const SubsectionPage = () => {
   if (!subsection) return <div>Subsection topilmadi</div>;
 
   return (
-    <div style={{marginBottom: '70px', display: 'flex', justifyContent:'center', alignItems: 'flex-start', flexDirection:'column', margin:30, paddingTop: 15, backgroundColor: '#fff', borderRadius: 10}} >
+    <div style={{marginBottom: '80px', display: 'flex', justifyContent:'center', alignItems: 'flex-start', flexDirection:'column', margin:30, paddingTop: 15, backgroundColor: '#fff', borderRadius: 10}} >
       {subsection.contents && subsection.contents.length > 0 ? (
         <>
         <h1 style={{marginLeft: '60px'}}>{subsection[`title_${language}`] || subsection.title_uz}</h1>
                 <List
                   grid={{ gutter: 0, column: () => getColumnCount }}
                   dataSource={subsection.contents}
+                  style={{marginBottom:'50px'}}
                   renderItem={(item) => (
                     <List.Item style={{ margin: '0 auto', padding: 0, borderRadius: '0' }}>
                       {renderContent(item, language)}
@@ -60,7 +61,7 @@ const SubsectionPage = () => {
                 />
       </>
       ) : (
-        <p>Content mavjud emas</p>
+        <p style={{margin: '30px', fontFamily: 'Inter Tight', width: '80%'}}>Content mavjud emas</p>
       )}
     </div>
   );

@@ -24,7 +24,7 @@ function Kontrakt_stipendiya() {
         if (res.data.length > 0) {
           console.log(res.data);
           setVideoUrl(res.data[0].url_video);
-        }
+        } 
       })
       .catch((err) => console.error("Video URL olishda xatolik:", err));
     }, []);
@@ -59,7 +59,7 @@ function Kontrakt_stipendiya() {
         .catch((err) => console.error("FAQ olishda xatolik:", err));
       }
     }, [selectedScholarship]);
-    // console.log(videoUrl);
+    console.log(videoUrl);
 const originalUrl = videoUrl; // yoki API'dan kelgan URL
 
 let embedUrl = null;
@@ -114,6 +114,7 @@ if (originalUrl && originalUrl.startsWith("http")) {
               <a
                 href="https://www.kontrakt.edu.uz"
                 target="_blank"
+
                 rel="noopener noreferrer"
               >
                 Rasmiy sayt: https://www.kontrakt.edu.uz
@@ -128,8 +129,13 @@ if (originalUrl && originalUrl.startsWith("http")) {
             <iframe
               width="560"
               height="315"
-              src={embedUrl}
-              // src="https://www.youtube.com/embed/1hrj8-mr7HQ"
+              // src={embedUrl}
+              src={
+                      videoUrl.includes('watch?v=')
+                        ? videoUrl.replace('watch?v=', 'embed/')
+                        : videoUrl.replace('youtu.be/', 'www.youtube.com/embed/')
+                    }
+              // src = "https://youtube.com/embed/haHVNLkkduc?si=H2JqVzuYubQHPgKq"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

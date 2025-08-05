@@ -71,7 +71,7 @@ if (loading) return (
           </div>
         ))
       ) : section.content && section.content.length > 0 ? (
-        <div className="content-list">
+        <div className="content-list" style={{marginBottom: '80px'}}>
           <List
             grid={{ gutter: 0, column: () => getColumnCount }}
             dataSource={section.content}

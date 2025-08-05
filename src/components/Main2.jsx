@@ -189,7 +189,7 @@ console.log(itemsToShow);
             {qrs.map((qr, index) => (
               <div className="qr-key" key={index}>
                 <div className="link">
-                  <img src={qr.photo} alt={`QR ${index}`} />
+                  <img src={qr.photo} alt={`QR ${index}`} />  
                   <div className="link-text1">{qr.url}</div>
                 </div>
                 </div>

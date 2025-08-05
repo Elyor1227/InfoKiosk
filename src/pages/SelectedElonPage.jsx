@@ -31,6 +31,18 @@ function SelectedElonPage() {
           <span className="selected-elon-date">{elon.day}</span>
         </div>
         <div className="formattedtext">{elon.info_uz}</div>
+        <iframe
+                    width="100%"
+                    height="550px"
+                    src={
+                      elon.video_url.includes('watch?v=')
+                        ? elon.video_url.replace('watch?v=', 'embed/')
+                        : elon.video_url.replace('youtu.be/', 'www.youtube.com/embed/')
+                    }
+                    frameBorder="0"
+                    allowFullScreen
+                    style={{ marginTop: '10px' }}
+                  ></iframe>
         <div className="elon-images">
             {
                 images.map((image)=> (
